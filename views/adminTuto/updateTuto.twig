@@ -1,0 +1,82 @@
+{% extends "/base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/css/adminTuto/updateTuto.css">
+{% endblock %}
+
+{% block main %}
+	<div class="container">
+		<h1>Modifier un tutoriel</h1>
+		<form action="/updateTuto/{{tuto.id}}" method="POST" enctype="multipart/form-data">
+			<div>
+				<label for="title">Titre du tutoriel :</label><br>
+				<input type="text" id="title" name="title" value="{{tuto.title}}"><br><br>
+			</div>
+
+			<div>
+				<label for="step-photo">Image du tutoriel :</label><br>
+				<input type="file" id="step-photo" name="photo"><br><br><br>
+			</div>
+
+			<div>
+				<label for="tools">Outil(s) :</label><br><br>
+				<div class="steps">
+					{% for tool in tools %}
+						<div>
+							<label for="tool{{loop.index0}}">{{tool.title}}</label>
+							<input id="{{loop.index0}}" {% if tool._id in tuto.tools %} checked="checked" {% endif %} type="checkbox" value="{{tool.id}}"><br>
+						</div>
+
+					{% endfor %}
+				</div>
+			</div>
+
+			<div><br>
+				<label for="description">Description Tutoriel :</label><br>
+				<textarea name="description" id="tuto-description">{{tuto.description}}</textarea><br><br>
+			</div>
+
+			<div>
+				<label for="temps">Temps de réparation (en minutes) :</label>
+				<input type="number" id="temps" name="time" min="0" value="{{tuto.time}}"><br><br>
+			</div>
+
+			<div>
+				<label for="difficulte">Niveau de difficulté (sur 5) :</label>
+				<input type="number" id="difficulte" name="level" min="1" max="5" value="{{tuto.level}}"><br><br>
+			</div>
+
+			<div>
+				<label for="etapes">Nombre d'étapes dans le tutoriel :</label>
+				<input type="number" id="etapes" name="etape" min="1" value="{{tuto.etape}}"><br><br>
+			</div>
+
+
+			<h2>Étapes du tutoriel :</h2>
+			<div>
+				{% for step in tuto.steps %}
+					<div class="step">
+						<label for="step-title">Titre de l'étape :</label><br>
+						<input type="text" id="step-title" name="steps[{{loop.index0}}][title]" value="{{step.title}}"><br>
+
+						<label for="step-description">Description de l'étape :</label><br>
+						<textarea id="step-description" name="steps[{{loop.index0}}][description]">{{step.description}}</textarea><br>
+						<input type="hidden" name="stepId" value={{step.id}}>
+						<input type="file" id="step-photo" name="photo"><br><br>
+						<div id="delete-step">
+							<a class="red-button" href="/deleteStep/{{step.id}}/{{tuto.id}}">&#10006;</a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+			<div id="add-step">
+				<button type="button" onclick="addStep()">Ajouter &#43;</button><br><br>
+			</div>
+			<div id="update-tuto">
+				<button type="submit">Modifier le tutoriel</button>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}

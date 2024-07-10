@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/adminTools/tools.css">
+{% endblock %}
+{% block main %}
+<div id="container">
+        <h1>Gestion Des outils</h1>
+        <a href="/addTools" class="button">Créer Un Outil</a>
+		<div id="search">
+			<form action="/tools" method="GET" class="search-form">
+				<input type="text" name="search" placeholder="Rechercher par nom... " class="search-input">
+				<button type="submit" class="search-button">&#10004;</button>
+			</form>
+		</div>
+        <table>
+			<thead>
+				<tr>
+					<th>Outils</th>
+					<th>Image</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for tools in tools %}
+					<tr>
+						<td>{{tools.title}}</td>
+						<td>
+						<img class="image" src="/image/uploads/{{tools.image }}" alt="">
+						</td>
+						<td>
+							<a href="/updateTools/{{tools.id }}">Modifier</a>
+							<a id="delete" href="/deleteTools/{{tools.id }}">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+    </div>
+
+{% endblock %}

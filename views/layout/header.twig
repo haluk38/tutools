@@ -1,0 +1,32 @@
+<div class="header">
+	{% if header == 'admin' %}
+	<div>
+		<a href="./dashboard"><img src="/image/TuTools.png" width="200px" alt="logo"></a>
+	</div>
+		<div class="buttons">
+			<a href="/gestion" class="btn">Gestion</a>
+			<a href="/tuto" class="btn">Nos Tutoriels</a>
+			<a href="/outils" class="btn">Nos Outils</a>
+			<a href="/logout" class="btn">Logout &#10132;</a>
+		</div>
+
+	{% elseif header == 'user' %}
+	<div>
+		<a href="./dashboard"><img src="/image/TuTools.png" width="200px" alt="logo"></a>
+	</div>
+		<div class="buttons">
+			<a href="/tuto" class="btn">Nos Tutoriels</a>
+			<a href="/outils" class="btn">Nos Outils</a>
+			<a href="/logout" class="btn">Logout &#10132;</a>
+		</div>
+
+	{% else %}
+	<div>
+		<a href="/accueil"><img src="/image/TuTools.png" width="200px" alt="logo"></a>
+	</div>
+		<div class="buttons">
+			<a href="/inscription" class="btn">Inscription</a>
+			<a href="/login" class="btn">Login</a>
+		</div>
+	{% endif %}
+</div>

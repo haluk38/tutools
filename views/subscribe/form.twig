@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/subscribe/subscribe.css">
+{% endblock %}
+
+{% block main %}
+<div id="container">
+        <form action="/inscription" method="post" enctype="multipart/form-data">
+            <h2>Créer un compte</h2>
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Nom" >
+                {% if error %}
+                    <p class="error">{{error.name}}</p>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <input type="text" id="firstname" name="firstname" placeholder="Prènom" >
+                {% if error %}
+                    <p class="error">{{error.firstname}}</p>
+                {% endif %}
+            </div>
+            <div class="form-group"> 
+                <input type="text" id="email" name="email" placeholder="Email" >
+                {% if error %}
+                    <p class="error">{{error.email}}</p>
+                {% endif %}
+            </div>
+            <div class="form-group"> 
+                <input type="file" id="photo" name="image" placeholder="Photo :" >
+                {% if error %}
+                    <p class="error">{{error.image}}</p>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Mot de passe">
+                {% if error %}
+                    <p class="error">{{error.password}}</p>
+                {% endif %}
+            </div>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+{% endblock %}

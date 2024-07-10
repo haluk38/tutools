@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/adminUser/user.css">
+{% endblock %}
+
+{% block main %}
+<div id="container">
+<h1>Gestion des utilisateurs </h1>
+
+<div id="search">
+	<form action="/user" method="GET" class="search-form">
+    <input type="text" name="search" placeholder="Rechercher par nom... " class="search-input">
+    <button type="submit" class="search-button">&#10004;</button>
+	</form>
+</div>
+
+<table >
+    <thead >
+        <tr>
+            <th>Nom </th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody >
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name}}</td>
+            <td>{{ user.firstname}}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <img class="image" src="/image/uploads/{{ user.image }}" alt="">
+            </td>
+            <td>
+                <a href="/updateUser/{{user.id }}">Modifier</a>
+                <a id="delete" href="/delete/{{user.id }}">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+
+{% endblock %}
+

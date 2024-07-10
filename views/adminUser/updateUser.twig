@@ -1,0 +1,38 @@
+{% extends "/base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/adminUser/updateUser.css">
+{% endblock %}
+
+{% block main %}
+<div class="user-form">
+    <h2 class="form-title">Modifier un Utilisateur</h2>
+    <form class="form" action="/updateUser/{{user.id}}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="text" id="name" name="name" class="input-field" placeholder="Nom" value="{{user.name}}">
+            {% if error %}
+                <p class="error-message">{{error.name}}</p>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <input type="text" id="firstname" name="firstname" class="input-field" placeholder="Prénom" value="{{user.firstname}}">
+            {% if error %}
+                <p class="error-message">{{error.firstname}}</p>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <input type="text" id="email" name="email" class="input-field" placeholder="Email" value="{{user.email}}">
+            {% if error %}
+                <p class="error-message">{{error.email}}</p>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <input type="file" id="photo" name="image" class="input-file" placeholder="Photo :">
+            {% if error %}
+                <p class="error-message">{{error.image}}</p>
+            {% endif %}
+        </div>
+        <button type="submit" class="submit-button">Modifier</button>
+    </form>
+</div>
+{% endblock %}

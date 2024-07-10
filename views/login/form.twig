@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/login/login.css">
+{% endblock %}
+
+{% block main %}
+<div id="container">
+        <form action="/login" method="post" >
+            <h2>Connexion à votre espace TuTools</h2>
+            <div class="form-group"> 
+                <input type="text" id="email" name="email" placeholder="Email" >
+                {% if error %}
+                    <p class="error">{{error.mail}}</p>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Mot de passe">
+                {% if error %}
+                    <p class="error">{{error.password}}</p>
+                {% endif %}
+            </div>
+            <button type="submit">Se Connecter</button>
+        </form>
+    </div>
+{% endblock %}

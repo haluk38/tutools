@@ -1,0 +1,103 @@
+body {
+
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du titre */
+h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style de l'en-tête du tableau */
+thead {
+    background-color: #f2f2f2;
+}
+
+/* Style des cellules de l'en-tête */
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    text-align: center;
+}
+
+/* Style des lignes du corps du tableau */
+tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Style des liens dans la dernière colonne */
+td a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+/* Style des liens au survol */
+td a:hover {
+    background-color: #ccc;
+}
+
+/* BARRE DE RECHERCHE */
+#search {
+    margin: 20px auto;
+}
+
+/* Style de la zone de texte de recherche */
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Style du bouton de recherche */
+.search-button {
+    background-color: #007bff;
+    /* Couleur du bouton */
+    color: white;
+    /* Couleur du texte */
+    border: none;
+    padding: 11px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style du bouton de recherche au survol */
+.search-button:hover {
+    background-color: #0056b3;
+    /* Couleur du bouton au survol */
+}
+
+.image {
+    width: 70px;
+    height: 70px;
+}
+#delete{
+    background-color: #ef233c;
+    color: white;
+}

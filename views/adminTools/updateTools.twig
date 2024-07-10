@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/adminTools/addTools.css">
+{% endblock %}
+{% block main %}
+<div class="container">
+<h1>Modifier Un Outil</h1>
+    <form action="/updateTools/{{tools.id}}" method="POST" enctype="multipart/form-data">
+        <div id="tools-container">
+            <div class="tool">
+                <label for="tool-title">Nom de l'outil :</label><br>
+                <input type="text" id="tool-title" name="title" value="{{tools.title}}"><br><br>
+                
+                <input type="file" id="tool-image" name="image"><br><br>
+
+                <label for="tools-description">Description de l'outil :</label><br>
+				<textarea id="tools-description" name="description">{{tools.description}}</textarea><br><br>
+                
+                <label for="tool-link">Lien vers le site externe :</label><br>
+                <input type="text" id="tool-link" name="link" value="{{tools.link}}"><br>
+            </div>
+        </div>
+        <button type="submit">Modifier</button><br><br>
+    </form>
+</div>
+{% endblock %}

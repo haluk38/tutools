@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/css/listTools/tools.css">
+{% endblock %}
+
+{% block main %}
+	<h1>Outils</h1>
+	<div id="search">
+		<form action="/outils" method="GET" class="search-form">
+			<input type="text" name="search" placeholder="Rechercher par nom... " class="search-input">
+			<button type="submit" class="search-button">&#10004;</button>
+		</form>
+	</div>
+	<div id="container">
+		{% for tool in tools %}
+		<div class="card">
+				<div class="top">
+				<p class="text-body"><img class="image" src="/image/uploads/{{tool.image }}" alt=""></p>
+					<p class="title">
+						{{tool.title}}
+					</p>
+					
+				</div >
+				<div id="btn">
+				<a class="link" href="/outil/{{tool.id}}">details</a>
+				<a  class="link" href="{{tool.link}}">acheter</a>
+				</div>
+				</div>
+
+		{% endfor %}
+	</div>
+{% endblock %}

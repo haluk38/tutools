@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/css/adminTuto/tuto.css">
+{% endblock %}
+{% block main %}
+	<div id="container">
+		<h1>Gestion Des Tutoriels</h1>
+		<a href="/addTuto" class="button">Créer un tutoriel</a>
+
+		<div id="search">
+			<form action="/tutoriel" method="GET" class="search-form">
+				<input type="text" name="search" placeholder="Rechercher par nom... " class="search-input">
+				<button type="submit" class="search-button">&#10004;</button>
+			</form>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for tuto in tutos %}
+					<tr>
+						<td>{{tuto.title}}</td>
+						<td>
+							<a href="/updateTuto/{{tuto.id}}">Modifier</a>
+							<a id="delete" href="/deleteTuto/{{tuto.id}}">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Animation des outils */
+.tools-animation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.tools-animation div {
+    width: 100px;
+    height: 100px;
+    margin: 0 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: toolAnimation 1.5s ease infinite alternate;
+}
+
+
+/* Animation des outils */
+@keyframes toolAnimation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+  

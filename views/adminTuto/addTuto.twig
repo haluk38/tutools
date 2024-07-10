@@ -1,0 +1,74 @@
+{% extends "base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/css/adminTuto/addTuto.css">
+{% endblock %}
+{% block main %}
+	<div class="container">
+		<h1>Ajouter un tutoriel</h1>
+		<form action="/addTuto" method="POST" enctype="multipart/form-data">
+			<div>
+				<label for="title">Titre du tutoriel :</label><br>
+				<input type="text" id="title" name="title"><br><br>
+			</div>
+			<div>
+				<label for="step-photo">Image du tutoriel :</label><br>
+				<input type="file" id="step-photo" name="photo"><br><br><br>
+			</div>
+
+			<div>
+				<label for="tools">Outil(s) :</label><br><br>
+				<div class="steps">
+					{% for tool in tools %}
+						<div>
+							<label for="tool{{loop.index0}}">{{tool.title}}</label>
+							<input id="{{loop.index0}}" name="tools" type="checkbox" value="{{tool.id}}"><br>
+						</div>
+
+					{% endfor %}
+				</div>
+			</div>
+
+			<div><br>
+				<label for="description">Description du Tutoriel :</label><br>
+				<textarea name="description" id="tuto-description"></textarea><br><br>
+			</div>
+
+			<div>
+				<label for="temps">Temps de réparation (en minutes) :</label>
+				<input type="number" id="temps" name="time" min="0"><br><br>
+			</div>
+
+			<div>
+				<label for="difficulte">Niveau de difficulté (sur 5) :</label>
+				<input type="number" id="difficulte" name="level" min="1" max="5"><br><br>
+			</div>
+
+			<div>
+				<label for="etapes">Nombre d'étapes dans le tutoriel :</label>
+				<input type="number" id="etapes" name="etape" min="1"><br><br>
+			</div>
+
+			<h2>Étapes du tutoriel :</h2>
+			<div id="steps-container">
+				<div class="step">
+					<label for="step-title">Titre de l'étape :</label><br>
+					<input type="text" id="step-title" name="steps[0][title]"><br>
+
+					<label for="step-description">Description de l'étape :</label><br>
+					<textarea id="step-description" name="steps[0][description]"></textarea><br>
+
+					<label for="step-photo">Image de l'étape :</label><br>
+					<input type="file" id="step-photo" name="photo"><br>
+				</div>
+			</div>
+			<div id="add-Step">
+				<button type="button" onclick="addStep()">Etape &#43;</button><br><br>
+			</div>
+			<div id="add-tuto">
+				<button type="submit">Ajouter le tutoriel</button>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}

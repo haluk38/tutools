@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TuTools</title>
+		<link rel="stylesheet" href="/css/base/base.css"> {% block style %}{% endblock %}
+
+		</head>
+		<body>
+			<header>
+			{% include "layout/header.twig" %}	
+			</header>
+			<main>
+				{% block main %}{% endblock %}
+			</main>
+
+			<footer>
+			{% include "layout/footer.twig" %}	
+			</footer>
+
+			<script src="/js/script.js"></script>
+		</body>
+	</html>

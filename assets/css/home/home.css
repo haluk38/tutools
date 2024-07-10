@@ -1,0 +1,51 @@
+/* DEBUT DU MAIN */
+h1 {
+    color: #333;
+    font-size: 3em;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    /* Pour centrer verticalement sur la page */
+}
+
+.buttonsPage {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 40px 30px;
+    /* Ajustez selon votre préférence */
+    font-size: 18px;
+    /* Ajustez selon votre préférence */
+    background-color: #007bff;
+    /* Couleur de fond du bouton */
+    color: #fff;
+    /* Couleur du texte */
+    text-decoration: none;
+    /* Supprime le soulignement du lien */
+    border-radius: 10px;
+    /* Pour arrondir les coins du bouton */
+    margin: 10px;
+    /* Espace entre les boutons */
+    transition: background-color 0.3s ease;
+    width: 150px;
+    text-align: -webkit-center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button img {
+    vertical-align: middle;
+    /* Pour aligner l'image verticalement au centre */
+    display: flex;
+}
+
+/* FIN DU MAIN  */

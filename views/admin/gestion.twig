@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/css/admin/gestion.css">
+{% endblock %}
+
+{% block main %}
+<p id="titre">Gestion administrateur</p>
+<div class="container">
+    <a href="/user" class="user">Utilisateur(s)</a>
+    <a href="/Tutoriel" class="tuto">TuToriel(s)</a>
+    <a href="/tools" class="tools">Outil(s)</a>
+</div>
+{% endblock %}

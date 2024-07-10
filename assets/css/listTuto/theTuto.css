@@ -1,0 +1,106 @@
+.container-tuto{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+h1{
+    text-align: center;
+}
+.image-tuto{
+    width: 40%;
+    height: 40%;
+    border-radius: 5%;
+    
+}
+.image-tools{
+    width: 15%;
+    height: 15%;
+    border-radius: 5%;
+}
+.container-info{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5%;
+}
+.container{
+    width: 60%;
+    text-align: center;
+}
+#description{
+    font-size: 2em;
+    
+}
+.resumer{
+    display: flex;
+    justify-content: center;
+}
+
+/* Style pour la section des outils */
+.container-tools {
+    max-height: 300px; /* Hauteur maximale de la liste avant le défilement */
+    overflow-y: auto; /* Activation du défilement vertical */
+    width: 40vw;
+}
+
+/* Style pour chaque élément de la liste d'outils */
+.container-tools ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0;
+}
+
+.container-tools li {
+    border-bottom: 1px solid #ccc; /* Ajoute une ligne de séparation entre les outils */
+    padding: 10px 0;
+}
+
+/* Style pour les images d'outils */
+.image-tools {
+    max-width: 100px; /* Largeur maximale des images */
+    height: auto; /* Hauteur automatique en gardant les proportions */
+    display: block; /* Permet de centrer l'image */
+    margin-bottom: 5px; /* Espacement en bas */
+}
+.img{
+    width: 30px;
+    height: 30px;
+    align-items: center;
+}
+.p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style pour le lien transformé en bouton */
+.button-link {
+    display: inline-block;
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    padding: 5px;
+    margin-block: auto;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Bord arrondi */
+    transition: background-color 0.3s ease; /* Transition en douceur de la couleur de fond */
+
+}
+
+.button-link:hover {
+    background-color: #45a049; /* Changement de couleur au survol */
+}
+
+.tools{
+    display: flex;
+    justify-content: space-around;
+}
+h2{
+    text-align: center;
+}
+li{
+    list-style-type: none;
+}
+.image-step{
+    width: 40%;
+    height: 40%;
+}

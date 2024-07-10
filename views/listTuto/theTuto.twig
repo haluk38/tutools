@@ -1,0 +1,60 @@
+{% extends "base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/css/listTuto/theTuto.css">
+{% endblock %}
+
+{% block main %}
+	<h1>{{ tuto.title }}</h1>
+	<div class="resumer">
+		<div class="container">
+			<p id="description">Description :</p>
+			<p>{{ tuto.description }}</p>
+		</div>
+	</div>
+	<div class="container-info">
+		<p class="p"><img class="img" src="/image/sablier.png" alt="sablier">
+			Temps nécessaire :
+			{{ tuto.time }}
+			minutes</p>
+		<p class="p"><img class="img" src="/image/niveau.png" alt="niveau">
+			Niveau de difficulté :
+			{{ tuto.level }}/5</p>
+		<p class="p"><img class="img" src="/image/prioriser.png" alt="niveau">
+			Nombre d'étapes :
+			{{ tuto.etape }}</p>
+	</div>
+	<div class="container-tuto">
+		<img class="image-tuto" src="/image/uploads/{{tuto.image}}" alt="">
+		<div>
+			<h2>Outils nécessaires :</h2>
+			<div class="container-tools">
+				<ul>
+					{% for tool in tuto.tools %}
+						<li>
+							<h3>{{ tool.title }}</h3>
+							<div class="tools">
+                                <img class="image-tools" src="/image/uploads/{{ tool.image }}" alt="{{ tool.title }}">
+								<a href="{{ tool.link }}" class="button-link">Accéder au lien</a>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<h2>Étapes :</h2>
+	<div class="container-steps">
+		<ol>
+			{% for step in tuto.steps %}
+            <li>
+				<h3>{{ step.title }}</h3>
+                <p>{{step.description}}</p>
+                <img class="image-step" src="/image/uploads/{{ step.photo }}" alt="{{ step.title }}">
+			</li>
+            {% endfor %}
+		</ol>
+	</div>
+{% endblock %}

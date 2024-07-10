@@ -1,0 +1,77 @@
+#titre {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Link styles */
+.user {
+    background-color: #001219;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 110px;
+    text-align: center;
+}
+
+/* Hover effects */
+.user:hover {
+    background-color: #023246;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tuto {
+    background-color: #0a9396;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    text-align: center;
+}
+
+/* Hover effects */
+.tuto:hover {
+    background-color: #03a7aa;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tools {
+    background-color: #e7cf85;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    text-align: center;
+}
+
+/* Hover effects */
+.tools:hover {
+    background-color: #e9c65d;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}

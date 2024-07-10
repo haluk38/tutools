@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/css/listTuto/tuto.css">
+{% endblock %}
+
+{% block main %}
+<h1>Tutoriels</h1>
+	<div id="search">
+		<form action="/tuto" method="GET" class="search-form">
+			<input type="text" name="search" placeholder="Rechercher par nom... " class="search-input">
+			<button type="submit" class="search-button">&#10004;</button>
+		</form>
+	</div>
+	<div id="container">
+		{% for tuto in tutos %}
+			<div class="card">
+				<div class="card-details">
+					<p class="text-title">{{tuto.title}}</p>
+					<p class="text"><img class="img" src="/image/sablier.png" alt="sablier">
+						Temps :
+						{{tuto.time}}min</p>
+					<p class="text"><img class="img" src="/image/niveau.png" alt="niveau">
+						Difficulté :
+						{{tuto.level}}/5</p>
+
+					<p class="text-body"><img class="image" src="/image/uploads/{{tuto.image }}" alt=""></p>
+				</div>
+				<a class="card-button" href="/theTuto/{{tuto.id}}">Consulter</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

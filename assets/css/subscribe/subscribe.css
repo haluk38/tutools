@@ -1,0 +1,63 @@
+/* PAGE SUBSCRIBE ET LOGIN  */
+#container {
+    width: 90%;
+    /* Utilisation d'une largeur relative pour s'adapter à différentes tailles d'écran */
+    max-width: 400px;
+    /* Limite la largeur maximale pour éviter que le contenu ne devienne trop étalé */
+    margin: 70px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    width: 100%;
+    /* Le formulaire occupera toute la largeur de son conteneur */
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    /* Réduit l'espacement entre les éléments */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    /* Calcul pour prendre en compte le padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+}
